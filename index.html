@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tebak Nama Hewan (Teks)</title>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").then(() => {
+        console.log("Service Worker Registered");
+      });
+    }
+  </script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    #question { font-size: 24px; margin-bottom: 20px; }
+    #answerInput { padding: 10px; font-size: 18px; }
+    #submitBtn, #restartBtn { padding: 10px 20px; font-size: 18px; margin: 10px; }
+    #lives { margin-top: 10px; font-weight: bold; }
+    #confetti { position: fixed; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <h1>Tebak Nama Hewan</h1>
+  <div id="game">
+    <div id="question">Memuat soal...</div>
+    <input type="text" id="answerInput" placeholder="Jawabanmu..." />
+    <button id="submitBtn">Kirim</button>
+    <div id="lives">❤️❤️❤️</div>
+  </div>
+  <button id="restartBtn" style="display:none;">Main Lagi</button>
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+  <script src="confetti.js"></script>
+</body>
+</html>
